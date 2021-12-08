@@ -25,7 +25,7 @@ const fileUpload = require('express-fileupload')
 
 const db = knex({
 	client: 'pg',
-	connectionString: process.env.PORT,
+	connectionString: process.env.DATABASE_URL,
 	ssl: {
 		rejectUnauthorized: false
 	}
