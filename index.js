@@ -31,8 +31,9 @@ const db = knex({
 	}
 })
 
-app.use(cors());
+
 const app = express();
+app.use(cors());
 app.use(express.static('public'))
 app.use('/images', express.static('images'))
 app.use(bodyParser.json());
