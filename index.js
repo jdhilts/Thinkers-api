@@ -41,7 +41,7 @@ app.use(fileUpload({createParentPath: true}))
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res)=> getAllArticles.handleAllArticles(req, res, db))
-app.post('/signup', (req, res)=> signup.handleSignup(req, res, db, bcrypt))	
+app.post('/signup', cors(), (req, res)=> signup.handleSignup(req, res, db, bcrypt))	
 app.post('/login', (req, res)=> login.handleLoginAuth(req, res, db, bcrypt))
 app.get('/profile/:id', auth.requireAuth, (req, res)=> profile.handleProfile(req, res, db))
 app.put('/update_profile/:id',  auth.requireAuth, (req, res)=> updateProfile.handleProfileUpdate(req,res, db))
