@@ -35,7 +35,7 @@ const db = knex({
 const app = express();
 
 app.use(cors({
-	origin:'https://tranquil-shelf-18730.herokuapp.com/'
+	origin:'https://tranquil-shelf-18730.herokuapp.com'
 }));
 
 app.use(express.static('public'))
