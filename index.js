@@ -35,8 +35,10 @@ const db = knex({
 const app = express();
 
 app.use(cors({
-	origin: 'https://tranquil-shelf-18730.herokuapp.com'
+	origin: 'https://tranquil-shelf-18730.herokuapp.com',
+	methods: 'GET, POST, PUT, PATCH'
 }));
+
 app.use(express.static('public'))
 app.use('/images', express.static('images'))
 app.use(bodyParser.json());
